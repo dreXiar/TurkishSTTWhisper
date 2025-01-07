@@ -1,0 +1,9 @@
+Increase Beam Size for Decoding:
+
+Although a lower beam size enhances speed, it compromises accuracy. Set beam_size 10 for better accuracy. You can also allow the beam size to be adjustable based on the audio length or the importance of accuracy over speed. Accuracy WER:91.33 --> 96.66
+
+Use a Higher Precision:
+
+Set compute_type to "float32" instead of "float16" in the WhisperModel initialization. While float16 is faster, float32 can yield more precise results, especially in challenging audio scenarios. I also adjusted some cuda files for process in float32 they are updated in drive. WER: 91.33-->94.66
+
+Total implementation: WER: 91.33 --> 97.33
